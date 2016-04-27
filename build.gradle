@@ -14,8 +14,8 @@ apply plugin: 'spring-boot'
 apply plugin: 'eclipse'
 
 jar {
-    baseName = 'myproject'
-    version =  '0.0.1-SNAPSHOT'
+    baseName = 'soccer_statistics'
+    version =  '0.1.0'
 }
 
 repositories {
@@ -26,5 +26,7 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("com.h2database:h2")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
