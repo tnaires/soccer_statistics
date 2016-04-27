@@ -22,7 +22,7 @@ public class Team {
 		
 	}
 	
-	Team(String name, Integer matches, Integer won, Integer drawn, Integer lost, Integer goalsFor,
+	public Team(String name, Integer matches, Integer won, Integer drawn, Integer lost, Integer goalsFor,
 			Integer goalsAgainst) {
 		this.name = name;
 		this.matches = matches;
