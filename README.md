@@ -14,7 +14,11 @@ It has only a root endpoint that returns statistics for a soccer championship. I
 # Run the application
 1. Clone the repository into your machine
 2. Browse into it
-3. run `./gradlew bootRun`
+3. Run `./gradlew bootRun`
+4. Access localhot:8080 (data is automatically loaded)
 
 # Run tests
 1. Run `./gradlew test` from root directory
+
+# Change data
+You can edit src/main/resources/data.sql file to change the data as you want.
