@@ -10,3 +10,11 @@ It has only a root endpoint that returns statistics for a soccer championship. I
 * H2 database
 * Eclipse IDE
 * Swagger
+
+# Run the application
+1. Clone the repository into your machine
+2. Browse into it
+3. run `./gradlew bootRun`
+
+# Run tests
+1. Run `./gradlew test` from root directory
