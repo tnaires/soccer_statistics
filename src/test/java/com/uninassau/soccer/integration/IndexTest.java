@@ -1,10 +1,7 @@
 package com.uninassau.soccer.integration;
 
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.hasItemInArray;
 import static org.junit.Assert.assertThat;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -27,23 +24,21 @@ public class IndexTest {
 	@Autowired
 	private Teams teams;
 	
-	private List<Team> savedTeams = new ArrayList<>();
-	
-	private RestTemplate restTemplate = new TestRestTemplate();
+	private Team savedTeam;
+	private RestTemplate restTemplate;
 	
 	@Before
 	public void setUp() {
-		savedTeams.add(new Team("Team 1", 1, 1, 1, 1, 1, 1));
-		savedTeams.add(new Team("Team 2", 2, 2, 2, 2, 2, 2));
-		teams.save(savedTeams);
+		restTemplate = new TestRestTemplate();
+
+		savedTeam = new Team("Team 1", 1, 1, 1, 1, 1, 1);
+		teams.save(savedTeam);
 	}
-	
+
 	@Test
 	public void shouldRenderSoccerStatisticsAsJSON() {
 		Team[] returnedTeams = restTemplate.getForObject("http://localhost:8080", Team[].class);
 		
-		for (int i = 0; i < returnedTeams.length; i++) {
-			assertThat(returnedTeams[i], is(savedTeams.get(i)));
-		}
+		assertThat(returnedTeams, hasItemInArray(savedTeam));
 	}
 }
