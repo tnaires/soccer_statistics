@@ -15,12 +15,12 @@ import io.swagger.annotations.ApiResponses;
 @RestController
 public class Index {
 	private final Teams teams;
-	
+
 	@Autowired
 	public Index(Teams teams) {
 		this.teams = teams;
 	}
-	
+
 	@ApiOperation(value = "Get all soccer statistics")
 	@ApiResponses({
 		@ApiResponse(code = 200, message = "Statistics for all the teams")

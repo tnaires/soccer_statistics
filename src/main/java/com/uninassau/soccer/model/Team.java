@@ -11,21 +11,19 @@ public class Team {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
-	private Integer matches;
 	private Integer won;
 	private Integer drawn;
 	private Integer lost;
 	private Integer goalsFor;
 	private Integer goalsAgainst;
-	
+
 	protected Team() {
-		
+
 	}
-	
-	public Team(String name, Integer matches, Integer won, Integer drawn, Integer lost, Integer goalsFor,
+
+	public Team(String name, Integer won, Integer drawn, Integer lost, Integer goalsFor,
 			Integer goalsAgainst) {
 		this.name = name;
-		this.matches = matches;
 		this.won = won;
 		this.drawn = drawn;
 		this.lost = lost;
@@ -36,31 +34,27 @@ public class Team {
 	public Long getId() {
 		return id;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
-	public Integer getMatches() {
-		return matches;
-	}
-	
+
 	public Integer getWon() {
 		return won;
 	}
-	
+
 	public Integer getDrawn() {
 		return drawn;
 	}
-	
+
 	public Integer getLost() {
 		return lost;
 	}
-	
+
 	public Integer getGoalsFor() {
 		return goalsFor;
 	}
-	
+
 	public Integer getGoalsAgainst() {
 		return goalsAgainst;
 	}

@@ -15,17 +15,17 @@ import com.uninassau.soccer.repository.Teams;
 public class IndexTest {
 	@Mock
 	private Teams teams;
-	
+
 	@InjectMocks
 	private Index index;
-	
+
 	@Test
 	public void shouldFetchTeamsFromRepository() {
 		teams = mock(Teams.class);
 		index = new Index(teams);
-		
+
 		index.getSoccerStatistics();
-		
+
 		verify(teams).findAll();
 	}
 }

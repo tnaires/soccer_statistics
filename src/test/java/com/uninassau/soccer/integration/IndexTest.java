@@ -23,22 +23,22 @@ import com.uninassau.soccer.repository.Teams;
 public class IndexTest {
 	@Autowired
 	private Teams teams;
-	
+
 	private Team savedTeam;
 	private RestTemplate restTemplate;
-	
+
 	@Before
 	public void setUp() {
 		restTemplate = new TestRestTemplate();
 
-		savedTeam = new Team("Team 1", 1, 1, 1, 1, 1, 1);
+		savedTeam = new Team("Team 1", 1, 1, 1, 1, 1);
 		teams.save(savedTeam);
 	}
 
 	@Test
 	public void shouldRenderSoccerStatisticsAsJSON() {
 		Team[] returnedTeams = restTemplate.getForObject("http://localhost:8080", Team[].class);
-		
+
 		assertThat(returnedTeams, hasItemInArray(savedTeam));
 	}
 }
