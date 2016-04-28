@@ -52,3 +52,7 @@ task integration(type: Test) {
         events "passed", "skipped", "failed"
     }
 }
+
+task stage {
+    dependsOn build
+}
