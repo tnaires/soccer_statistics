@@ -32,3 +32,23 @@ dependencies {
     compile("io.springfox:springfox-swagger-ui:2.4+")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
+
+test {
+    filter {
+        exclude "**/integration/**"
+    }
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+task integration(type: Test) {
+    filter {
+        includeTestsMatching "com.uninassau.soccer.integration.*"
+    }
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
