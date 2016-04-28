@@ -8,8 +8,8 @@ It has only a root endpoint that returns statistics for a soccer championship. I
 * Gradle
 * Spring Boot
 * H2 database
-* Eclipse IDE
 * Swagger
+* Eclipse IDE
 
 # Run the application
 1. Clone the repository into your machine
@@ -17,8 +17,11 @@ It has only a root endpoint that returns statistics for a soccer championship. I
 3. Run `./gradlew bootRun`
 4. Access localhot:8080 (data is automatically loaded)
 
-# Run tests
-1. Run `./gradlew test` from root directory
+# Run unit tests
+* Run `./gradlew test` from root directory
+
+# Run integration tests
+* Run `./gradlew integration` from root directory
 
 # Change data
 You can edit src/main/resources/data.sql file to change the data as you want.
