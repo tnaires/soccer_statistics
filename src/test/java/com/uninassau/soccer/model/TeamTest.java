@@ -18,4 +18,21 @@ public class TeamTest {
 		assertThat(team.hashCode(), is(sameTeam.hashCode()));
 		assertThat(team.hashCode(), is(not(differentTeam.hashCode())));
 	}
+	
+	@Test
+	public void shouldReturnCalculatedInformation() {
+		Team team = new Team("Time", 10, 5, 3, 10, 10);
+		
+		assertThat(team.getTotalGames(), is(18));
+		assertThat(team.getAmountOfPoints(), is(35));
+		assertThat(team.getGoalsDifference(), is(0));
+	}
 }
+
+
+
+
+
+
+
+

@@ -58,6 +58,18 @@ public class Team {
 	public Integer getGoalsAgainst() {
 		return goalsAgainst;
 	}
+	
+	public Integer getTotalGames() {
+		return won + drawn + lost;
+	}
+	
+	public Integer getAmountOfPoints() {
+		return won * 3 + drawn;
+	}
+	
+	public Integer getGoalsDifference() {
+		return goalsFor - goalsAgainst;
+	}
 
 	@Override
 	public int hashCode() {
