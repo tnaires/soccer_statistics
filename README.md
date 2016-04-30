@@ -25,3 +25,6 @@ It has only a root endpoint that returns statistics for a soccer championship. I
 
 # Change data
 You can edit src/main/resources/data.sql file to change the data as you want.
+
+# Access the application
+This application is running on Heroku. You can access https://soccer-statistics.herokuapp.com/swagger-ui.html to use it.
